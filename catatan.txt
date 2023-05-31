@@ -1,0 +1,5 @@
+LIBARAY:
+1. MPDF : https://mpdf.github.io/installation-setup/installation-v7-x.html
+2. PHPWORD: https://phpword.readthedocs.io/en/latest/installing.html
+3. rest api : https://github.com/chriskacerguis/codeigniter-restserver
+4. php spredsheet : https://phpspreadsheet.readthedocs.io/en/latest/
