@@ -1,0 +1,23 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class Input_blankspot extends CI_Controller {
+
+	public function __construct()
+	{
+		parent::__construct();
+        $this->load->helper(['cookie']);
+		$this->akses->cek($this->input->cookie('user_id',true), $this->uri->segment(2));
+
+
+	}
+	public function index()
+	{
+		$page_data['page_title']  = 'Input Data Blankspot';
+        $page_data['page_folder'] = 'blankspot';
+		$page_data['page_name']	  = 'input_blankspot';
+		$this->load->view('backend/index', $page_data);
+	}
+
+
+}
