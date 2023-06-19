@@ -4,20 +4,20 @@
                 <!-- Logo Light -->
                 <a href="index.html" class="logo logo-light">
                     <span class="logo-lg">
-                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="logo" height="22">
+                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="logo" height="46">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="small logo" height="22">
+                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="small logo" height="46">
                     </span>
                 </a>
 
                 <!-- Logo Dark -->
                 <a href="index.html" class="logo logo-dark">
                     <span class="logo-lg">
-                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="dark logo" height="22">
+                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="dark logo" height="46">
                     </span>
                     <span class="logo-sm">
-                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="small logo" height="22">
+                        <img src="<?= $this->setting->get_name('site_logo'); ?>" alt="small logo" height="46">
                     </span>
                 </a>
 
@@ -51,10 +51,22 @@
                             </a>
                         </li>
 
-                        <li class="side-nav-title side-nav-item">Master</li>
+                        <li class="side-nav-title side-nav-item">Transaksi</li>
 
 
-                        <?php foreach($this->menu->get_menu($this->input->cookie('user_id',true)) as $menu): ?>
+                        <?php foreach($this->menu->get_menu($this->input->cookie('user_id',true), 'Transaksi') as $menu): ?>
+                         <li class="side-nav-item <?php if($menu['controller'] == $this->uri->segment(2)){ echo 'bg-info rounded text-white'; } ?> ">
+                            <a href="<?= site_url($menu['link']); ?>"  class="side-nav-link <?php if($menu['controller'] == $this->uri->segment(2)){ echo 'bg-info rounded text-white'; } ?>">
+                                <?= $menu['icon']; ?>
+                                <span> <?= $menu['menu']; ?> </span>
+                            </a>
+                        </li>
+                        <?php endforeach; ?>
+
+                           <li class="side-nav-title side-nav-item">Master</li>
+
+
+                        <?php foreach($this->menu->get_menu($this->input->cookie('user_id',true), 'Master') as $menu): ?>
                          <li class="side-nav-item <?php if($menu['controller'] == $this->uri->segment(2)){ echo 'bg-info rounded text-white'; } ?> ">
                             <a href="<?= site_url($menu['link']); ?>"  class="side-nav-link <?php if($menu['controller'] == $this->uri->segment(2)){ echo 'bg-info rounded text-white'; } ?>">
                                 <?= $menu['icon']; ?>

@@ -16,7 +16,7 @@
         </div>
     <div class="card">
         <div class="card-body">
-         <table id="basic-datatable" class="table dt-responsive nowrap w-100 table-sm">
+         <table id="basic-datatable" class="table dt-responsive nowrap w-100 table-sm text-dark">
             <thead>
                 <tr>
                     <th>No</th>

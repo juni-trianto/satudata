@@ -14,9 +14,10 @@
             </div>
             <h4 class="page-title"><?= $page_title; ?></h4>
         </div>
+        
     <div class="card">
         <div class="card-body">
-         <table id="basic-datatable" class="table dt-responsive nowrap w-100">
+         <table id="basic-datatable" class="table dt-responsive nowrap w-100 text-dark">
             <thead>
                 <tr>
                     <th>No</th>

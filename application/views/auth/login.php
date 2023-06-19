@@ -32,7 +32,7 @@
                             <!-- Logo -->
                             <div class="card-header pt-4 pb-4 text-center bg-primary">
                                 <a href="index.html">
-                                    <span><img src="<?= $this->setting->get_name('site_logo'); ?>" alt="logo" height="22"></span>
+                                    <span><img src="<?= $this->setting->get_name('site_logo'); ?>" alt="logo" height="90"></span>
                                 </a>
                             </div>
 
