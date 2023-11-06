@@ -20,7 +20,7 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Prov</th>
+                    <th>Organisasi</th>
                     <th>nama Lengkap</th>
                     <th>No Hp</th>
                     <th>Username</th>
@@ -30,11 +30,11 @@
             <tbody>
                <?php
                $no = 1;
-               foreach($this->db->select('users.*, m_provider.nama_provider')->join('m_provider', 'm_provider.id=users.provider_id')->get('users')->result_array() as $row):
+               foreach($this->db->select('users.*, m_organisasi.organisasi')->join('m_organisasi', 'm_organisasi.kode_organisasi=users.kode_organisasi')->get('users')->result_array() as $row):
                ?>
                <tr>
                 <td><?= $no++; ?></td>
-                <td><?= $row['nama_provider'] ?></td>
+                <td><?= $row['organisasi'] ?></td>
                 <td><?= $row['nama_lengkap'] ?></td>
                 <td><?= $row['no_hp'] ?></td>
                 <td><?= $row['username'] ?></td>

@@ -18,7 +18,7 @@ class user extends CI_Controller {
         {
            $password =   password_hash($this->input->post('password', true), PASSWORD_DEFAULT);
 
-           $insertdata['provider_id'] = $this->input->post('provider_id', true);
+           $insertdata['kode_organisasi'] = $this->input->post('kode_organisasi', true);
            $insertdata['nama_lengkap'] = $this->input->post('nama_lengkap', true);
            $insertdata['no_hp'] = $this->input->post('no_hp', true);
            $insertdata['email'] = $this->input->post('email', true);
@@ -52,7 +52,7 @@ class user extends CI_Controller {
                 $insertdata['password'] = $password;
             }
 
-           $insertdata['provider_id'] = $this->input->post('provider_id', true);
+           $insertdata['kode_organisasi'] = $this->input->post('kode_organisasi', true);
            $insertdata['nama_lengkap'] = $this->input->post('nama_lengkap', true);
            $insertdata['no_hp'] = $this->input->post('no_hp', true);
            $insertdata['email'] = $this->input->post('email', true);

@@ -1,5 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
+use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
+
 
 class Welcome extends CI_Controller {
 
@@ -18,8 +21,28 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
-	public function index()
+	public function excel()
 	{
-		$this->load->view('welcome_message');
+		$spreadsheet = new Spreadsheet();
+		$activeWorksheet = $spreadsheet->getActiveSheet();
+		$fileName      = 'Cobwa';
+		$activeWorksheet->setCellValue('A1', 'Hello World !');
+
+		$writer = new Xlsx($spreadsheet);
+        header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
+        header('Content-Disposition: attachment;filename=' . $fileName . '.xlsx');
+        header('Cache-Control: max-age=0');
+        $writer->save('php://output');
+	}
+
+	public function mpdf()
+	{
+		$mpdf = new \Mpdf\Mpdf();
+
+		// Write some HTML code:
+		$mpdf->WriteHTML('Hello World');
+
+		// Output a PDF file directly to the browser
+		$mpdf->Output();
 	}
 }

@@ -37,7 +37,7 @@ class Auth extends CI_Controller {
                               $cookie= array(
                                 'name'   => 'user_id',
                                 'value'  => $get_user['id'],
-                                'expire' => '3600',
+                                'expire' => '360000',
                             );
                             $this->input->set_cookie($cookie);
 

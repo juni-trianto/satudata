@@ -1,15 +1,15 @@
 <?php $data = $this->db->get_where('users',['id' => $param2 ])->row_array(); ?>
 <?= form_open('admin/user/update'); ?>
 <input type="hidden" name="id" value="<?= $data['id']; ?>">
-   <div class="mb-1">
+    <div class="mb-1">
         <label for="employeeName" class="form-label">Provider</label>
-        <select name="provider_id" class="form-control  form-select" id="" required>
+        <select name="kode_organisasi" class="form-control  form-select" id="" required>
             <option value="">..::Provider::..</option>
-            <?php foreach($this->db->get('m_provider')->result_array() as $provider): ?>
-                <option value="<?= $provider['id'] ?>" <?php if($data['provider_id'] == $provider['id']){ echo'selected'; } ?>><?= $provider['nama_provider']; ?></option>
+            <?php foreach($this->db->get('m_organisasi',['deleted_at' => null])->result_array() as $provider): ?>
+                <option value="<?= $provider['kode_organisasi'] ?>" <?php if($data['kode_organisasi'] == $provider['kode_organisasi']){ echo'selected'; } ?>><?= $provider['organisasi']; ?></option>
             <?php endforeach; ?>
         </select>
-    </div>
+            </div>
     <div class="mb-1">
         <label for="employeeName" class="form-label">nama_lengkap</label>
         <input type="text" class="form-control" name="nama_lengkap" value="<?= $data['nama_lengkap'] ?>" autocomplete="off" required >

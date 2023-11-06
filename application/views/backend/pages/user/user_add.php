@@ -1,10 +1,10 @@
 <?= form_open('admin/user'); ?>
    <div class="mb-1">
-        <label for="employeeName" class="form-label">Provider</label>
-        <select name="provider_id" class="form-control  form-select" id="" required>
-            <option value="">..::Provider::..</option>
-            <?php foreach($this->db->get('m_provider')->result_array() as $provider): ?>
-                <option value="<?= $provider['id'] ?>"><?= $provider['nama_provider']; ?></option>
+        <label for="employeeName" class="form-label">Organisasi</label>
+        <select name="kode_organisasi" class="form-control  form-select" id="" required>
+            <option value="">..::Pilih::..</option>
+            <?php foreach($this->db->get_where('m_organisasi',['deleted_at' => null])->result_array() as $provider): ?>
+                <option value="<?= $provider['kode_organisasi'] ?>"><?= $provider['organisasi']; ?></option>
             <?php endforeach; ?>
         </select>
     </div>
@@ -18,7 +18,7 @@
     </div>
      <div class="mb-1">
         <label for="employeeName" class="form-label">Email</label>
-        <input type="email" class="form-control" name="email" autocomplete="off" required placeholder="Email">
+        <input type="text" class="form-control" name="email" autocomplete="off" required placeholder="Email">
     </div>
       <div class="mb-1">
         <label for="employeeName" class="form-label">Username</label>
